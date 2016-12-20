@@ -187,7 +187,7 @@ class Creare_CreareSeoCore_Model_Observer extends Mage_Core_Model_Abstract {
                 $querystring = ($_SERVER['QUERY_STRING'] ? '?'.$_SERVER['QUERY_STRING'] : '');
                 $product = $observer->getEvent()->getProduct();
                 $url = $product->getUrlModel()->getUrl($product, array('_ignore_category'=>true)).$querystring;
-                if(Mage::helper('core/url')->getCurrentUrl() != $url){
+                if(Mage::helper('core/url')->getCurrentUrl() != Mage::helper('core/url')->escapeUrl($url)){
                     Mage::app()->getFrontController()->getResponse()->setRedirect($url,301);
                     Mage::app()->getResponse()->sendResponse();
                 }
