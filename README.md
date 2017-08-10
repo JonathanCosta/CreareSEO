@@ -1,6 +1,7 @@
 ## Latest Version
 
 1.6 - unofficially 
+
 Last documented version - https://adammoss.co.uk/magentofox/magento-creareseo-1-5/
 
 ## About CreareSEO for Magento
