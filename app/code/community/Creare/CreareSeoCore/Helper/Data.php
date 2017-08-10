@@ -28,9 +28,9 @@ class Creare_CreareSeoCore_Helper_Data extends Mage_Core_Helper_Abstract
             return Mage::getBaseUrl();
         }
         
-        $customRedirectUrl = $product->getAttributeText('creareseo_discontinued_url');
+        $customRedirectUrl = $product->getData('creareseo_discontinued_url');
         if($type === '301 Redirect to Custom Url' && strlen($customRedirectUrl)){
-            return $customRedirectUrl();
+            return $customRedirectUrl;
         }   
 
         if($type === '301 Redirect to Product SKU'){

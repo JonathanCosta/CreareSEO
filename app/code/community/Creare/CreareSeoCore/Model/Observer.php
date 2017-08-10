@@ -81,14 +81,26 @@ class Creare_CreareSeoCore_Model_Observer extends Mage_Core_Model_Abstract
         }
 
         if ($request->getControllerName() === "product") {
-
-            $product = Mage::getResourceModel('catalog/product_collection')
+			
+			if(Mage::getStoreConfig('catalog/frontend/flat_catalog_product')){
+				$product = Mage::getModel('catalog/product')->getCollection()
                 ->addAttributeToSelect('creareseo_discontinued')
                 ->addAttributeToSelect('creareseo_discontinued_product')
+                ->addAttributeToSelect('creareseo_discontinued_url')
                 ->addAttributeToSelect('name')
                 ->addIdFilter($request->getParam('id'))
                 ->setPageSize(1)
                 ->getFirstItem();
+			} else {
+				$product = Mage::getResourceModel('catalog/product_collection')
+                ->addAttributeToSelect('creareseo_discontinued')
+                ->addAttributeToSelect('creareseo_discontinued_product')
+                ->addAttributeToSelect('creareseo_discontinued_url')
+                ->addAttributeToSelect('name')
+                ->addIdFilter($request->getParam('id'))
+                ->setPageSize(1)
+                ->getFirstItem();
+			}          
 
             if ($discontinuedUrl = $this->helper->getDiscontinuedProductUrl($product)) {
                 $this->redirect301($discontinuedUrl, $product->getName());
