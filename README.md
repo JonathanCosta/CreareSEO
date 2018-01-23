@@ -1,12 +1,17 @@
+## Latest Version
+
+1.5 - https://adammoss.co.uk/magentofox/magento-creareseo-1-5/
+
 ## About CreareSEO for Magento
 
-This is a free Magento extension has a range of features that helps Magento become more compliant with the latest SEO standards. The ultimate aim is for your store to rank better in Google by making small adjustments to your store's configuration. 
+This is a free Magento extension has a range of features that helps Magento become more compliant with the latest search engine standards. The ultimate aim is for your store to rank better in Google by making small adjustments to your store's configuration. 
 
-This extension is available to install on [Magento Connect](http://www.magentocommerce.com/magento-connect/creare-seo.html).
+**This extension is no longer available on Magento Connect.**
 
 ### Compatibility
 
 Magento Community Edition 1.4 to 1.9
+Tested successfully in most versions of Enterprise Edition
 
 ### Installation
 
@@ -25,7 +30,7 @@ The CreareSEO Checklist page can be accessed via **System > CreareSEO > CreareSE
 
 This page will check and make recommendations on various configuration settings within Magento and CreareSEO that should or shouldn't be enabled in order to maximise SEO performance.
 
-![CreareSEO Checklist](https://github.com/Creare/CreareSEO/blob/master/creareseo-checklist.png)
+![CreareSEO Checklist](https://github.com/adampmoss/CreareSEO/blob/master/creareseo-checklist.png)
 
 ### Features
 
@@ -41,7 +46,7 @@ Below is a list of the current features available within the extension. Our team
 |Custom category headings|1.0|
 |Disabled product redirects|1.0|
 |Breadcrumbs structured data|1.0|
-|Hide 'duplicate product' button|1.0|
+|Hide 'duplicate product' button _(deprecated)_|1.0|
 |Twitter cards on product pages|1.0|
 |OpenGraph data on product pages|1.0|
 |.htaccess editor via configuration|1.0|
@@ -64,11 +69,11 @@ Below is a list of the current features available within the extension. Our team
 |Google Tag Manager support|1.3|
 |Canonical meta tags for CMS pages|1.4|
 |Logo structured data|1.4|
-|Organization structured data|1.3|
+|Organization structured data|1.4|
 
 ### Support
 
-Go [here](http://creareseo.custservhq.com/articles/frequently-asked-questions) to see a list of issues that we have come across and we have found a solution to. If you have any other issues with this extension, please [open an issue](https://github.com/Creare/CreareSEO/issues) on GitHub.
+Go [here](http://creareseo.custservhq.com/articles/frequently-asked-questions) to see a list of issues that we have come across and we have found a solution to. If you have any other issues with this extension, please [open an issue](https://github.com/adampmoss/CreareSEO/issues) on GitHub.
 
 ### Disable the Module
 
@@ -84,6 +89,4 @@ After doing this, clear the cache and reindex your data.
 ### Developers
 
 - Adam Moss ([@adampmoss](https://twitter.com/adampmoss)) 
-- Robert Kent ([@kent_robert](https://twitter.com/kent_robert))
-
-Module ideas and contributions are provided by one of Creare's SEO specialists and Technical Director, James Bavington ([@jamesbavington](https://twitter.com/jamesbavington)).
+- Robert Kent ([@kent_robert](https://twitter.com/kent_robert)) (previous)
