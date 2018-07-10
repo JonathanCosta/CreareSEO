@@ -87,6 +87,7 @@ class Creare_CreareSeoCore_Model_Observer extends Mage_Core_Model_Abstract
 
         if ($request->getControllerName() === "product") {
 
+            Mage::app()->getStore()->setConfig('catalog/frontend/flat_catalog_product', 0); // Flat tables don't include disabled products...
             $product = Mage::getResourceModel('catalog/product_collection')
                 ->addAttributeToSelect('creareseo_discontinued')
                 ->addAttributeToSelect('creareseo_discontinued_product')
