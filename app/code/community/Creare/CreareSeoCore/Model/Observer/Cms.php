@@ -14,7 +14,7 @@ class Creare_CreareSeoCore_Model_Observer_Cms extends Mage_Core_Model_Abstract
 
     public function forceTitle($observer)
     {
-        if(!$this->shouldRunOnCurrentAction()) {
+        if (!$this->shouldRunOnCurrentAction()) {
             return $this;
         }
 
@@ -27,9 +27,10 @@ class Creare_CreareSeoCore_Model_Observer_Cms extends Mage_Core_Model_Abstract
         return $this;
     }
 
-    protected function overridePageTitle($titleString) {
+    protected function overridePageTitle($titleString)
+    {
         $layout = Mage::app()->getLayout();
-        if(!$layout) {
+        if (!$layout) {
             $this->log("Failed to load layout; unable to force page title to '{$titleString}'.");
             return;
         }
@@ -43,26 +44,29 @@ class Creare_CreareSeoCore_Model_Observer_Cms extends Mage_Core_Model_Abstract
         $head->setData('title', $titleString);
     }
 
-    public function shouldRunOnCurrentAction() {
+    public function shouldRunOnCurrentAction()
+    {
         $actionName = Mage::app()->getFrontController()->getAction()->getFullActionName();
 
-        if ( !in_array($actionName, $this->getActionNamesToActUpon()) ) {
+        if (!in_array($actionName, $this->getActionNamesToActUpon())) {
             return false;
         }
 
         $enabledInConfig = $this->helper->config("cms_title_enabled");
-        if ( !$enabledInConfig ) {
+        if (!$enabledInConfig) {
             return false;
         }
 
         return true;
     }
 
-    public function getActionNamesToActUpon() {
+    public function getActionNamesToActUpon()
+    {
         return ["cms_index_index", "cms_page_view"];
     }
 
-    public function log($msg, $level=null) {
+    public function log($msg, $level=null)
+    {
         Mage::log($msg, $level, 'creare_seo.log');
     }
 }
