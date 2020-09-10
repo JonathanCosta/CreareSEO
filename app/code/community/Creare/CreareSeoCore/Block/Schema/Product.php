@@ -6,7 +6,13 @@ class Creare_CreareSeoCore_Block_Schema_Product extends Mage_Catalog_Block_Produ
 
     public function cleanString($string)
     {
-        return strip_tags(addcslashes($string, '"\\/'));
+        $cleanString = strip_tags($string);
+        $cleanString = trim($cleanString);
+        // addcslashes does NOT handle \n, so that we need to escape it ourselves
+        $cleanString = str_replace(array("\r\n", "\n"), array("\n", "\\n"), $cleanString);
+        $cleanString = addcslashes($cleanString, '"\\/');
+
+        return $cleanString;
     }
 
     public function getCurrency()
@@ -48,13 +54,12 @@ class Creare_CreareSeoCore_Block_Schema_Product extends Mage_Catalog_Block_Produ
         $total_rating = 0;
         $rating_count = count($ratings);
 
-
         if ($rating_count) {
             foreach ($ratings as $rating) {
                 $total_rating += $rating->getValue();
             }
 
-            $average_rating = round($total_rating / $rating_count);
+            $average_rating = round($total_rating / $rating_count, 1);
 
             return $average_rating;
         }

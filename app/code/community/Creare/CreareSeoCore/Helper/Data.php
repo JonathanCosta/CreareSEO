@@ -1,6 +1,12 @@
 <?php
 class Creare_CreareSeoCore_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    const DEFAULT_CONFIG_PATH = 'creareseocore/defaultseo/';
+
+    public function getConfig($field)
+    {
+        return Mage::getStoreConfig(self::DEFAULT_CONFIG_PATH.$field);
+    }
 
     public function getDiscontinuedProductUrl($product)
     {
@@ -11,10 +17,10 @@ class Creare_CreareSeoCore_Helper_Data extends Mage_Core_Helper_Abstract
             $cats = $product->getCategoryIds();
             if (is_array($cats) && count($cats) > 1) {
                 $cat = Mage::getModel('catalog/category')->load( $cats[0] ); 
-                return $cat->getUrlPath();
+                return Mage::getUrl($cat->getUrlPath());
             } else {
                 $cat = Mage::getModel('catalog/category')->load( $cats ); 
-                return $cat->getUrlPath();
+                return Mage::getUrl($cat->getUrlPath());
             }
         }
 
@@ -51,7 +57,7 @@ class Creare_CreareSeoCore_Helper_Data extends Mage_Core_Helper_Abstract
             } else {
                 return Mage::getBaseUrl().$category->getUrlPath();
             }
-        } else {
+        } else if ($category->getParentId()) {
             $parentCategory = Mage::getModel('catalog/category')->load($category->getParentId());
             return $this->getDiscontinuedCategoryUrl($parentCategory);
         }

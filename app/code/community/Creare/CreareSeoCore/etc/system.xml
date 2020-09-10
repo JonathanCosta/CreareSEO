@@ -74,6 +74,33 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </noindexparamsgallery>
+                        <noindexparamscart translate="label">
+                            <label>Apply NOINDEX to Cart Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </noindexparamscart>
+                        <noindexparamsaccount translate="label">
+                            <label>Apply NOINDEX to Account Pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </noindexparamsaccount>
+                        <noindexparamsparameterpages translate="label">
+                            <label>Apply NOINDEX to Parameter Pages</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </noindexparamsparameterpages>
                         <duplicate translate="label">
                             <label>Disable Duplicate Button in Product Edit?</label>
                             <frontend_type>select</frontend_type>
@@ -111,7 +138,7 @@
                             <show_in_store>1</show_in_store>
                         </forcehptitle>
                         <enablecmscanonical>
-                            <label>Use Canonical Link Meta Tag For CMS Pages</label>
+                            <label>Enable CMS Canonical Meta Tags</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>70</sort_order>
@@ -119,6 +146,30 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </enablecmscanonical>
+                        <cms_canonical_protocol>
+                            <label>Use standard or secure URLs in CMS canonical tags?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>creareseocore/source_protocols</source_model>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enablecmscanonical>1</enablecmscanonical>
+                            </depends>
+                        </cms_canonical_protocol>
+                        <cms_canonical_slashes>
+                            <label>Add slashes to end of canonical CMS URL?</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enablecmscanonical>1</enablecmscanonical>
+                            </depends>
+                        </cms_canonical_slashes>
                     </fields>
                 </defaultseo>
                 <!-- Below config is depreciated in 1.2 as the observer
@@ -249,7 +300,7 @@
                     </comment>
                     <fields>
                         <enabled>
-                            <label><![CDATA[Enable Twitter Cards & OG Tags?]]></label>
+                            <label>Enable Twitter Cards and OG Tags?</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>10</sort_order>
@@ -276,7 +327,7 @@
                     </fields>
                 </social>
                 <metadata>
-                    <label>Default Page Titles &amp; Meta Descriptions</label>
+                    <label>Default Page Titles and Meta Descriptions</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>80</sort_order>
                     <show_in_default>1</show_in_default>
@@ -309,6 +360,8 @@
                                 <small>[name] = Product Name<br />
                                 [store] = Store Name<br />
                                 [attribute_code] = Attribute Value<br />
+                                [first_category] = First Category Found<br />
+                                [categories] = Outputs all categories comma-separated<br />
                                 <strong>For example: [name] - [store].</strong></small>
                         ]]></comment>
                         </product_title>
@@ -333,6 +386,8 @@
                                 <small>[name] = Product Name<br />
                                 [store] = Store Name<br />
                                 [attribute_code] = Attribute Value<br />
+                                [first_category] = First Category Found<br />
+                                [categories] = Outputs all categories comma-separated<br />
                                 <strong>For example: Buy [name] online from our [store]. See our other [brand] products.</strong></small>
                         ]]></comment>
                         </product_metadesc>
@@ -448,7 +503,7 @@
                             <source_model>Creare_CreareSeoCore_Model_Source_AnalyticsType</source_model>
                         </type>
                         <enable_demographics translate="label">
-                            <label>Enable Demographics &amp; Interest Reports</label>
+                            <label>Enable Demographics and Interest Reports</label>
                             <frontend_type>select</frontend_type>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
@@ -734,6 +789,42 @@
                         </enabled>
                     </fields>
                 </sitelinksearch>
+                <imagesitemap>
+                    <label>Image Sitemap</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>150</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>
+                        <![CDATA[
+                            <p>If you enable Image Sitemap you will provide Google with structured data about your images and increase the chance to be listed in Google image search.
+                        ]]>
+                    </comment>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable Image Sitemap</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <path translate="label">
+                            <label>Image Sitemap Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enabled>1</enabled>
+                            </depends>
+                            <comment>Where the image sitemap should be stored. The path is relative to the media folder. Please make sure that the folder exists and is writeable.</comment>
+                        </path>
+                    </fields>
+                </imagesitemap>
             </groups>
         </creareseocore>
         <crearehtaccess>

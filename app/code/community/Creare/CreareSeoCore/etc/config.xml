@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Creare_CreareSeoCore>
-            <version>1.4.1</version>
+            <version>1.5</version>
         </Creare_CreareSeoCore>
     </modules>
     <adminhtml>
@@ -13,6 +13,15 @@
                 </creareseocore>
             </updates>
         </layout>
+        <translate>
+            <modules>
+                <Creare_CreareSeoCore>
+                    <files>
+                        <default>Creare_CreareSeoCore.csv</default>
+                    </files>
+                </Creare_CreareSeoCore>
+            </modules>
+        </translate>
     </adminhtml>
     <frontend>
         <layout>
@@ -87,6 +96,14 @@
                     <model>creareseocore/cleanup::doCleanup</model>
                 </run>
             </creare_creareseocore>
+            <creare_creareseocore_image_sitemap>
+                <schedule>
+                    <cron_expr>42 2 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>creareseocore/sitemap_image::create</model>
+                </run>
+            </creare_creareseocore_image_sitemap>
         </jobs>
     </crontab>
     <frontend>
@@ -194,7 +211,7 @@
                         <class>creareseocore/observer</class>
                         <method>saveConfigOnConfigLoad</method>
                     </creareseo_savefileconfig>
-                    <!-- Below observer depreciated in 1.2 as the 
+                    <!-- Below observer depreciated in 1.2 as the
                     script causes need to reindex on every product save.
                     <processcheck>
                         <type>singleton</type>
@@ -222,11 +239,16 @@
                 <mandatory_alt>0</mandatory_alt>
                 <noindexparamssearch>1</noindexparamssearch>
                 <noindexparamsgallery>1</noindexparamsgallery>
+                <noindexparamscart>1</noindexparamscart>
+                <noindexparamsaccount>1</noindexparamsaccount>
+                <noindexparamsparameterpages>0</noindexparamsparameterpages>
                 <duplicate>0</duplicate>
                 <category_h1>1</category_h1>
                 <forcecanonical>1</forcecanonical>
                 <forcehptitle>1</forcehptitle>
                 <enablecmscanonical>1</enablecmscanonical>
+                <cms_canonical_protocol>http://</cms_canonical_protocol>
+                <cms_canonical_slashes>1</cms_canonical_slashes>
             </defaultseo>
             <googleanalytics>
                 <type>0</type>
@@ -274,6 +296,10 @@
             <sitelinksearch>
                 <enabled>1</enabled>
             </sitelinksearch>
+            <imagesitemap>
+                <enabled>0</enabled>
+                <path>sitemaps/images/sitemap.xml</path>
+            </imagesitemap>
         </creareseocore>
     </default>
 </config>
