@@ -92,6 +92,7 @@ class Creare_CreareSeoCore_Model_Observer extends Mage_Core_Model_Abstract
             $product = Mage::getResourceModel('catalog/product_collection')
                 ->addAttributeToSelect('creareseo_discontinued')
                 ->addAttributeToSelect('creareseo_discontinued_product')
+                ->addAttributeToSelect('creareseo_discontinued_url')
                 ->addAttributeToSelect('name')
                 ->addIdFilter($request->getParam('id'))
                 ->setPageSize(1)
