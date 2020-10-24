@@ -180,6 +180,11 @@
                         <class>creareseocore/observer</class>
                         <method>forceHomepageTitle</method>
                     </forcehptitle>
+                    <forcecmstitle>
+                        <type>singleton</type>
+                        <class>creareseocore/observer_cms</class>
+                        <method>forceTitle</method>
+                    </forcecmstitle>
                 </observers>
             </controller_action_layout_generate_blocks_after>
         </events>
@@ -265,6 +270,8 @@
                 <enabled>0</enabled>
             </social>
             <metadata>
+                <cms_title_enabled>0</cms_title_enabled>
+                <cms_title>[title] - [store]</cms_title>
                 <product_title_enabled>0</product_title_enabled>
                 <product_title>[name] - [store]</product_title>
                 <product_metadesc_enabled>0</product_metadesc_enabled>
