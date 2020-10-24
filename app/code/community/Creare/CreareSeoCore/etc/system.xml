@@ -838,7 +838,7 @@
                     <frontend_type>text</frontend_type>
                     <sort_order>10</sort_order>
                     <show_in_default>1</show_in_default>
-                    <comment><![CDATA[<strong>IMPORTANT!</strong><p>To write to your .htaccess, you must set permissions to at least 664. 
+                    <comment><![CDATA[<strong>IMPORTANT!</strong><p>To write to your .htaccess, you must set permissions to at least 664.
 Overwriting your .htaccess can cause problems with your website, so only alter if you know what you're doing.</p>]]></comment>
                     <fields>
                         <htaccess translate="label">
@@ -914,6 +914,7 @@ Overwriting your .htaccess can cause problems with your website, so only alter i
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <comment> <![CDATA[Please do not inclue the domain name, only your Twitter username.]]></comment>
                         </creareseo_twitter>
                         <creareseo_facebook translate="label">
                             <label>Facebook</label>
@@ -922,6 +923,7 @@ Overwriting your .htaccess can cause problems with your website, so only alter i
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <comment> <![CDATA[Please do not inclue the domain name, only your Facebook page name.]]></comment>
                         </creareseo_facebook>
                         <creareseo_google_plus translate="label">
                             <label>Google Plus</label>
@@ -930,6 +932,7 @@ Overwriting your .htaccess can cause problems with your website, so only alter i
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <comment> <![CDATA[Please do not inclue the domain name, only your Google+ user number or page name.]]></comment>
                         </creareseo_google_plus>
                         <creareseo_youtube translate="label">
                             <label>YouTube</label>
@@ -938,6 +941,7 @@ Overwriting your .htaccess can cause problems with your website, so only alter i
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <comment> <![CDATA[Please do not inclue the domain name, only your YouTube channel name.]]></comment>
                         </creareseo_youtube>
                         <creareseo_linkedin translate="label">
                             <label>LinkedIn</label>
@@ -946,6 +950,7 @@ Overwriting your .htaccess can cause problems with your website, so only alter i
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <comment> <![CDATA[Please do not inclue the domain name, only your LinkedIn company page name.]]></comment>
                         </creareseo_linkedin>
                         <creareseo_instagram translate="label">
                             <label>Instagram</label>
@@ -954,7 +959,17 @@ Overwriting your .htaccess can cause problems with your website, so only alter i
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <comment> <![CDATA[Please do not inclue the domain name, only your Instagram username.]]></comment>
                         </creareseo_instagram>
+                        <creareseo_pinterest translate="label">
+                            <label>Pinterest</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>130</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment> <![CDATA[Please do not inclue the domain name, only your Pinterest username.]]></comment>
+                        </creareseo_pinterest>
                     </fields>
                 </store_information>
             </groups>
