@@ -1,6 +1,8 @@
 ## Latest Version
 
-1.5 - https://adammoss.co.uk/magentofox/magento-creareseo-1-5/
+1.6 - unofficially 
+
+Last documented version - https://adammoss.co.uk/magentofox/magento-creareseo-1-5/
 
 ## About CreareSEO for Magento
 
@@ -70,6 +72,7 @@ Below is a list of the current features available within the extension. Our team
 |Canonical meta tags for CMS pages|1.4|
 |Logo structured data|1.4|
 |Organization structured data|1.4|
+|Custom redirect URL support for disabled products|1.6|
 
 ### Support
 
