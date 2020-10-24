@@ -74,11 +74,11 @@ class Creare_CreareSeoCore_Helper_Data extends Mage_Core_Helper_Abstract
      * On controller_action_predispatch called by saveConfigOnConfigLoad()
      */
     
-    public function saveFileContentToConfig($file, $field)
+    public function saveFileContentToConfig($file, $field, $robots_location = '')
     {
         $adminsession = Mage::getSingleton('adminhtml/session');
         $io = new Varien_Io_File();
-        $io->open(array('path' => Mage::getBaseDir()));
+        $io->open(array('path' => Mage::getBaseDir().DS.$robots_location));
         
         if ($io->fileExists($file))
         {
